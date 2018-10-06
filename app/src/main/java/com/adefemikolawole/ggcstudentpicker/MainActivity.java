@@ -36,22 +36,22 @@ public class MainActivity extends AppCompatActivity {
         ArrayList<String> stList = new ArrayList<>();
         stList.add("Benjamin Franklin");
         stList.add("Elijah Paul");
-        stList.add("Zidiqqi Rumat");
+        stList.add("Samuel  Jackson");
         stList.add("Janet Logan");
         stList.add("Cynthia Johnson");
         stList.add("Paul Washer");
-        stList.add("Benjamin Franklin");
-        stList.add("Elijah Paul");
-        stList.add("Zidiqqi Rumat");
+        stList.add("Edward Parker");
+        stList.add("Jonah Raul");
+        stList.add("Ade Job");
+        stList.add("Gabe Union");
+        stList.add("Cage Nicholas");
+        stList.add("Paul Presley");
+        stList.add("Hugh Jackson");
+        stList.add("Michael Paul");
+        stList.add("Blessing Simi");
         stList.add("Janet Logan");
-        stList.add("Cynthia Johnson");
-        stList.add("Paul Washer");
-        stList.add("Benjamin Franklin");
-        stList.add("Elijah Paul");
-        stList.add("Zidiqqi Rumat");
-        stList.add("Janet Logan");
-        stList.add("Cynthia Johnson");
-        stList.add("Paul Washer");
+
+        stList.add("Adanna Okoro");
         Collections.sort(stList);
 
         String [] studentList = {"sola", "ade"};
