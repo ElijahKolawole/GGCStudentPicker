@@ -12,4 +12,14 @@
 
     </style>
 
+
+    <!--Menu theme. -->
+    <style name="CustomPopupStyle" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+       <item name="overlapAnchor">false</item>
+        <item name="android:dropDownVerticalOffset">3dp</item>
+
+
+    </style>
+
 </resources>
