@@ -14,12 +14,15 @@
         android:id="@+id/imgHeader"
         android:layout_width="0dp"
         android:layout_height="105dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="48dp"
         android:contentDescription="@string/image_header"
         android:scaleType="fitXY"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/header" />
+
+
 
 </android.support.constraint.ConstraintLayout>

@@ -13,6 +13,8 @@ import android.view.WindowManager;
 
 public class MainActivity extends AppCompatActivity {
     public static String TAG = MainActivity.class.getSimpleName();
+//FLoatingActionBar fLoatingActionBar = new FloatingActionBar();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">GGC Student Picker</string>
     <string name="image_header">Header Image</string>
+    <string name="about">About </string>
 </resources>
