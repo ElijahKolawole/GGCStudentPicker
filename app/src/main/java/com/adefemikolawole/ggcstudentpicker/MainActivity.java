@@ -1,5 +1,6 @@
 package com.adefemikolawole.ggcstudentpicker;
 import android.R.menu;
+import android.app.ListActivity;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
@@ -11,21 +12,56 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListAdapter;
+import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
+import android.view.View;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 
 public class MainActivity extends AppCompatActivity {
     public static String TAG = MainActivity.class.getSimpleName();
-//FLoatingActionBar fLoatingActionBar = new FloatingActionBar();
-
+    private ListView stListView;
+    //FLoatingActionBar fLoatingActionBar = new FloatingActionBar();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ArrayList<String> stList = new ArrayList<>();
+        stList.add("Benjamin Franklin");
+        stList.add("Elijah Paul");
+        stList.add("Zidiqqi Rumat");
+        stList.add("Janet Logan");
+        stList.add("Cynthia Johnson");
+        stList.add("Paul Washer");
+        stList.add("Benjamin Franklin");
+        stList.add("Elijah Paul");
+        stList.add("Zidiqqi Rumat");
+        stList.add("Janet Logan");
+        stList.add("Cynthia Johnson");
+        stList.add("Paul Washer");
+        stList.add("Benjamin Franklin");
+        stList.add("Elijah Paul");
+        stList.add("Zidiqqi Rumat");
+        stList.add("Janet Logan");
+        stList.add("Cynthia Johnson");
+        stList.add("Paul Washer");
+        Collections.sort(stList);
 
+        String [] studentList = {"sola", "ade"};
+        ListAdapter stListAdapter = new ArrayAdapter<String>(MainActivity.this, android.R.layout.simple_list_item_1, stList);
+        stListView = findViewById(R.id.lvStudentList);
+        stListView.setAdapter(stListAdapter);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         changeStatusActionBarColor();
+        setTvPickedStudent();
         Log.e(TAG, "Application successfully launched...");
     }
 
@@ -56,4 +92,15 @@ public class MainActivity extends AppCompatActivity {
             window.setStatusBarColor(getResources().getColor(R.color.darkGreen));
         }
     }
+
+   public void setTvPickedStudent(){
+       final TextView tvStPicked = findViewById(R.id.tvStudentPicked);
+       stListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+           @Override
+           public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+               String name = String.valueOf(parent.getItemAtPosition(position));
+               tvStPicked.setText(name);
+           }
+       });
+   }
 }
