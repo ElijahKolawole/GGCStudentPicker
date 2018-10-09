@@ -24,12 +24,15 @@ import android.view.View;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
     public static String TAG = MainActivity.class.getSimpleName();
     private ListView stListView;
     FloatingActionButton fab;
     private TextView tvStPicked;
+    private ArrayList<String> stList;
+    private int random;
 
 
     //FLoatingActionBar fLoatingActionBar = new FloatingActionBar();
@@ -38,11 +41,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ArrayList<String> stList = new ArrayList<>();
+        stList = new ArrayList<>();
         stList.add("Benjamin Franklin");
         stList.add("Elijah Paul");
         stList.add("Samuel  Jackson");
-        stList.add("Janet Logan");
+
         stList.add("Cynthia Johnson");
         stList.add("Paul Washer");
         stList.add("Edward Parker");
@@ -111,12 +114,23 @@ public class MainActivity extends AppCompatActivity {
    }
 
    public void generatRandomStudentWithFab(){
+       final int arrayLength = stList.size();
+        Log.e(TAG, String.valueOf(random));
+       // stList.le
+
+
         fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                int max = arrayLength;
+
+                Random rand = new Random();
+                random = rand.nextInt(max);
                // Snackbar.make(view, "Here's a Snackbar", Snackbar.LENGTH_LONG).setAction("Action", null).show();
-                tvStPicked.setText("FAB CLCIKED");
+                //tvStPicked.setText(String.valueOf(random) + stList.get(random));
+               String  tvText = "Random: ";
+                tvStPicked.setText( tvText + stList.get(random));
             }
         });
    }
