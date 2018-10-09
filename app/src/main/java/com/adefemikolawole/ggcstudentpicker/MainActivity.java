@@ -3,6 +3,8 @@ import android.R.menu;
 import android.app.ListActivity;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -21,12 +23,15 @@ import android.widget.Toast;
 import android.view.View;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 
 public class MainActivity extends AppCompatActivity {
     public static String TAG = MainActivity.class.getSimpleName();
     private ListView stListView;
+    FloatingActionButton fab;
+    private TextView tvStPicked;
+
+
     //FLoatingActionBar fLoatingActionBar = new FloatingActionBar();
 
     @Override
@@ -54,11 +59,12 @@ public class MainActivity extends AppCompatActivity {
         stList.add("Adanna Okoro");
         Collections.sort(stList);
 
-        String [] studentList = {"sola", "ade"};
+
         ListAdapter stListAdapter = new ArrayAdapter<String>(MainActivity.this, android.R.layout.simple_list_item_1, stList);
         stListView = findViewById(R.id.lvStudentList);
         stListView.setAdapter(stListAdapter);
         Toolbar toolbar = findViewById(R.id.toolbar);
+        generatRandomStudentWithFab();
         setSupportActionBar(toolbar);
         changeStatusActionBarColor();
         setTvPickedStudent();
@@ -94,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
    public void setTvPickedStudent(){
-       final TextView tvStPicked = findViewById(R.id.tvStudentPicked);
+       tvStPicked = findViewById(R.id.tvStudentPicked);
        stListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
            @Override
            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -102,5 +108,16 @@ public class MainActivity extends AppCompatActivity {
                tvStPicked.setText(name);
            }
        });
+   }
+
+   public void generatRandomStudentWithFab(){
+        fab = findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               // Snackbar.make(view, "Here's a Snackbar", Snackbar.LENGTH_LONG).setAction("Action", null).show();
+                tvStPicked.setText("FAB CLCIKED");
+            }
+        });
    }
 }
